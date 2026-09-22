@@ -1,0 +1,127 @@
+{
+  "status": "final",
+  "category": "kinetic-type",
+  "duration_s": 6,
+  "fps": 30,
+  "canvas": { "w": 1080, "h": 1920, "aspect": "9:16" },
+  "style": "밝고 자연스러운 웰니스 에디토리얼 키네틱 타이틀. 원본 블루베리 피킹 사진은 색보정, 필터, 카메라 무빙 없이 그대로 유지하고, 열린 하늘의 상단 중앙 안전 영역에 두 줄 제목을 놓는다. 움직임은 빠른 워터폴 도착, 두 핵심어의 절제된 스프링 강조, 손으로 그은 듯한 밑줄 스윕 하나로 제한한다.",
+  "palette": ["#3B165F", "#FFD84D", "#FFF2D6"],
+  "font": "Noto Sans KR",
+  "beats": [6, 15, 28, 36, 102, 168],
+  "export": "mp4",
+  "asset_needs": [],
+  "block": "caption-editorial-emphasis",
+  "customize": {
+    "background_asset": ".media/images/image_001.png",
+    "background_fit": "cover at 1080x1920; source aspect is effectively 9:16, so preserve composition with no animated crop",
+    "background_treatment": "none; no filter, retouch, blur, zoom, pan, or color grade",
+    "reuse_components": [
+      {
+        "id": "line-by-line-slide",
+        "purpose": "adapt to a two-line vertical waterfall arrival from below; retain binary reveal rather than opacity fading"
+      },
+      {
+        "id": "spring-pop",
+        "purpose": "apply a restrained physical settle to the two emphasis spans only"
+      },
+      {
+        "id": "marker-highlight",
+        "purpose": "use the underline mode for one left-to-right draw beneath 저속노화"
+      }
+    ],
+    "animation_rules": ["waterfall-entry", "spring-pop-entrance", "svg-path-draw"],
+    "layout": {
+      "title_box_px": { "x": 110, "y": 88, "w": 720, "h": 230 },
+      "alignment": "center",
+      "safe_area_rationale": "keep all title pixels in the open upper sky, above the hat and away from the left berry clusters, face, picking hand, and basket",
+      "lines": [
+        {
+          "text": "블루베리,",
+          "font_size_px": 94,
+          "font_weight": 900,
+          "line_height": 0.98
+        },
+        {
+          "text": "나의 저속노화 비법",
+          "font_size_px": 72,
+          "font_weight": 800,
+          "line_height": 1.05
+        }
+      ],
+      "tracking_em": -0.045,
+      "text_shadow": "0 5px 18px rgba(32, 14, 48, 0.38)",
+      "backing": "none"
+    },
+    "word_colors": {
+      "블루베리": "#3B165F",
+      "저속노화": "#FFD84D",
+      "default": "#FFF2D6"
+    },
+    "underline": {
+      "target": "저속노화",
+      "color": "#FFD84D",
+      "stroke_width_px": 8,
+      "stroke_linecap": "round",
+      "offset_px": 10,
+      "draw_direction": "left-to-right",
+      "draw_ease": "power2.out"
+    },
+    "motion_timing": {
+      "quiet_lead_s": 0.2,
+      "line_1_waterfall_s": [0.2, 0.7],
+      "line_2_waterfall_s": [0.47, 1.02],
+      "blueberry_emphasis_settle_s": [0.5, 0.98],
+      "slow_aging_emphasis_settle_s": [0.92, 1.4],
+      "underline_draw_s": [1.2, 1.68],
+      "resolved_hold_s": [1.68, 3.4],
+      "single_pattern_interrupt_s": [3.4, 3.78],
+      "final_hold_s": [3.78, 6.0]
+    },
+    "motion_parameters": {
+      "waterfall": "line 1 rises from y=72px over 0.50s; line 2 begins 0.23s before line 1 settles and rises from y=48px over 0.55s; use binary visibility at each start and power4.out, with no arrival fade",
+      "emphasis_pop": "emphasis spans begin at scale 0.88 and settle to 1.0 with a soft 4% physical overshoot, damping fraction about 0.68; transform origin 50% 50%; no rotation or bounce loop",
+      "underline_draw": "measure the inline SVG path once at setup, set dasharray and dashoffset to its length, then draw to zero over 0.48s; the line must terminate exactly under 저속노화",
+      "pattern_interrupt": "at 3.40s only 저속노화 performs one restrained scale pulse 1.00 to 1.03 to 1.00; no other element changes",
+      "exit": "none; hold the completed title and untouched photo through the final frame"
+    },
+    "audio": "none",
+    "narration": "none",
+    "additional_copy": "none",
+    "catalog_searches": [
+      {
+        "query": "editorial kinetic title typography",
+        "tier": "words",
+        "selected": "caption-editorial-emphasis"
+      },
+      {
+        "query": "reveal a headline one line at a time",
+        "tier": "words",
+        "selected": "line-by-line-slide"
+      },
+      {
+        "query": "spring pop emphasis word",
+        "tier": "words",
+        "selected": "spring-pop"
+      },
+      {
+        "query": "underline sweep beneath emphasized word",
+        "tier": "words",
+        "selected": "marker-highlight"
+      }
+    ]
+  },
+  "content": {
+    "scenes": [
+      {
+        "id": "title-over-photo",
+        "start": 0,
+        "end": 6,
+        "text": "블루베리, 나의 저속노화 비법",
+        "emphasis_words": ["블루베리", "저속노화"],
+        "emotion": "신선하고 건강하며 자신감 있는 발견",
+        "motion": "Hook 0.20-0.70s: 첫 줄이 열린 하늘에서 아래로부터 빠르게 워터폴 도착. Build 0.47-1.02s: 둘째 줄이 겹쳐 이어지고 두 핵심어가 각자의 색으로 물리적인 스프링 정착. Punch 1.20-1.68s: 밝은 노란색 밑줄이 저속노화 아래를 한 번 그린다. Resolve 1.68-3.40s: 완성된 제목을 읽게 한다. Pattern interrupt 3.40-3.78s: 저속노화만 3% 단일 펄스. Final hold 3.78-6.00s: 모든 요소가 정지한 채 끝 프레임까지 유지된다.",
+        "beats": [0.2, 0.5, 0.93, 1.2, 3.4, 5.6]
+      }
+    ]
+  }
+}

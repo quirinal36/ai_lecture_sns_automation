@@ -1,0 +1,76 @@
+{
+  "category": "kinetic-type",
+  "duration_s": 10,
+  "fps": 30,
+  "canvas": { "w": 1080, "h": 1080, "aspect": "1:1" },
+  "style": "Premium fictional lifestyle app launch: warm paper field, precision graphite phone, acid coral UI, oversized condensed Latin branding with restrained Korean copy. One dominant motif: the camera changes the apparent scale of a physical smartphone, from one personal rhythm to a field of possibilities.",
+  "palette": ["#F4F1EB", "#141414", "#FF5937", "#D4E2CB", "#C9C3E9"],
+  "font": "Inter",
+  "font_ko": "Noto Sans KR",
+  "beats": [0.18, 1.2, 2.65, 3.8, 4.6, 6.65, 7.55, 8.25],
+  "export": "mp4",
+  "asset_needs": [],
+  "brief": "The first frame is already a designed product shot: a graphite smartphone rushes toward us and unwinds into a legible PULSE dashboard. One short Korean phrase locks in behind it. The screen approaches, turns, then the camera retreats to reveal a disciplined but slightly angled wall of phones, each showing an original app theme. The wall surges away, a dark field replaces the paper background, and a single coral PULSE wordmark lands above the final promise. Motion is the message, no narration or unsupported numerical claims.",
+  "block": "headline-slam",
+  "customize": {
+    "component_reuse": [
+      { "id": "device-frame-stage", "use": "Reuse graphite material, 9:19.5 silhouette, bezel and safe screen slot. Replace its entry choreography because the user explicitly requests a rotating device showcase. Add side thickness with preserve-3d and restrained rotationY, not a paper-flat rectangle." },
+      { "id": "parallax-zoom", "use": "Reuse the focal-card versus sibling parallax mapping in reverse: progress 1 to 0 reveals nine phones. Screens remain crisp. Final group rotation -8 degrees with a unified zoom out. This is a customization of the supplied component, not a new effect." },
+      { "id": "headline-slam", "use": "Use scale-down landing for PULSE ending, replacing three-frame shake with a very restrained 2px landing. Korean tagline uses short vertical travel and a clean hold." }
+    ],
+    "safe_area": "Essential typography inside x=80..1000, y=80..1000. Phones may intentionally cross the frame edge during moves.",
+    "app_ui": "PULSE lifestyle app: tiny top bar, PULSE wordmark, large coral circular rhythm visualization, a Today card, two minimal activity rows, bottom navigation. Secondary screens vary coral circle, sage goal tile, lavender playlist tiles; avoid fake metrics and dense tiny prose.",
+    "finish": "Use soft contact shadows and a restrained graphite rim highlight. No lens-flare, noise, particle dust, background blobs or decorative charts. Text behind phone must not need reading while occluded. 1.4s end hold.",
+    "audio_direction": "Optional original percussive 120 BPM synth sting, no voice; accents on device settle, grid reveal and wordmark landing. Resolve audio through media-use if adding audio."
+  },
+  "content": {
+    "block": "headline-slam",
+    "scenes": [
+      {
+        "id": "hook",
+        "start": 0,
+        "end": 2.65,
+        "text": "일상을,",
+        "emphasis_words": ["일상을"],
+        "emotion": "confident and tactile",
+        "motion": "0.00 already visible phone at x690 y570, scale 1.22, rotationZ -22deg, rotationY -30deg; 0.18..1.10 fly to x675 y555 scale .88, rotationZ 8deg rotationY -10deg using power3.out; headline locks at x90 y330, 122px Korean with 0.24s clip/slide entrance. Phone occupies roughly 380x790px. At 1.80 begin forward dolly, reaching 1.45 scale with right edge intentionally cropped by 2.65. Background paper, 42px PULSE label at top-left and tiny APP CONCEPT at bottom-left.",
+        "beats": [0.18, 1.2]
+      },
+      {
+        "id": "dive",
+        "start": 2.65,
+        "end": 4.6,
+        "text": "내 리듬으로.",
+        "emphasis_words": ["리듬"],
+        "emotion": "fast and precise",
+        "motion": "Phone pivots from cropped closeup through a frontal moment, rotates Z toward -8deg and returns to exact canvas center x540 y540. Original screen state swaps once at 3.3s under the camera move. Korean text positioned upper-left clear of central screen, 96px; hold at least .55s. End phone is centered, 338x732px, ready to match the focal phone of the grid with no visible seam.",
+        "beats": [2.65, 3.8]
+      },
+      {
+        "id": "expand",
+        "start": 4.6,
+        "end": 7.55,
+        "text": "나만의 가능성.",
+        "emphasis_words": ["가능성"],
+        "emotion": "expansive and exhilarating",
+        "motion": "4.60..5.95 reverse parallax-zoom progress 1 to 0: center phone reduces from 338x732px to 158x342px, eight siblings converge from beyond frame to a 3x3 field. Grid spacing x=238 y=390, outer rows crop artistically; group rotation -8deg. Cleanly vary screen themes coral/sage/lavender. At 5.95..6.65 hold grid with tiny push back. Headline at center may use a paper horizontal cutout band for contrast, 95px black; keep screens visible. 6.65..7.55 accelerate grid upward and smaller, anticipating dark end card.",
+        "beats": [4.6, 6.65]
+      },
+      {
+        "id": "resolve",
+        "start": 7.55,
+        "end": 10,
+        "text": "PULSE\n일상을, 내 리듬으로.",
+        "emphasis_words": ["PULSE"],
+        "emotion": "decisive and memorable",
+        "motion": "At 7.55 dark #141414 field wipes upward following phone wall. PULSE wordmark 208px bold tightly spaced coral at x540 y460 scale 1.35 to 1 with headline-slam at 7.72..8.25. A coral rounded-square P icon may settle above at y270. Korean line 51px paper at y635 slides up 20px 8.10..8.45. Hold final lockup through 10s with barely perceptible 1% drift. No fake download buttons or store badges.",
+        "beats": [7.55, 8.25]
+      }
+    ]
+  },
+  "catalog_evidence": [
+    { "query": "3d smartphone rotation device product showcase", "tier": "words", "matches": ["app-showcase", "multi-device-splay", "parallax-device-dive", "device-frame-stage"] },
+    { "query": "phone grid expansion zoom out", "tier": "words", "matches": ["parallax-zoom", "zoom-through-transition"] },
+    { "query": "kinetic typography large headline slam", "tier": "words", "matches": ["headline-slam", "caption-kinetic-slam"] }
+  ]
+}

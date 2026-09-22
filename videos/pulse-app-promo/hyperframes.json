@@ -12,9 +12,20 @@
   "authoringSkill": "motion-graphics",
   "registryItems": [
     {
-      "name": "ticker-takeover",
+      "name": "device-frame-stage",
       "type": "hyperframes:component",
-      "target": "compositions/components/ticker-takeover.html"
+      "target": "registry-reference/device-frame-stage.html"
+    },
+    {
+      "name": "parallax-zoom",
+      "type": "hyperframes:component",
+      "target": "registry-reference/parallax-zoom.html"
+    },
+    {
+      "name": "headline-slam",
+      "type": "hyperframes:component",
+      "target": "registry-reference/headline-slam.html"
     }
   ]
 }
+

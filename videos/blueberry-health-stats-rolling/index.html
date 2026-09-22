@@ -1,0 +1,346 @@
+<!doctype html>
+<html lang="ko" data-resolution="portrait">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <title>블루베리 건강 지표 롤링 숫자판</title>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <style>
+      @font-face {
+        font-family: "Noto Sans KR";
+        src: url("assets/fonts/NotoSansKR-VF.ttf") format("truetype");
+        font-style: normal;
+        font-weight: 100 900;
+        font-display: block;
+      }
+
+      :root {
+        --panel: rgba(18, 12, 36, 0.92);
+        --cream: #fff4dc;
+        --brand: #c9a7ff;
+        --border: rgba(255, 244, 220, 0.22);
+        --shadow: rgba(12, 8, 24, 0.34);
+      }
+
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        width: 1080px;
+        height: 1920px;
+        margin: 0;
+        overflow: hidden;
+        background: #19122e;
+      }
+
+      #stage {
+        position: relative;
+        width: 1080px;
+        height: 1920px;
+        overflow: hidden;
+        font-family: "Noto Sans KR", sans-serif;
+      }
+
+      .clip {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+      }
+
+      #blueberry-background {
+        position: absolute;
+        inset: 0;
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+      }
+
+      .panel-inner {
+        position: absolute;
+        left: 90px;
+        width: 900px;
+        height: 220px;
+        display: grid;
+        grid-template-columns: 410px 352px;
+        column-gap: 42px;
+        align-items: center;
+        padding: 34px 48px;
+        border: 1px solid var(--border);
+        border-radius: 32px;
+        background: var(--panel);
+        box-shadow: 0 18px 60px var(--shadow);
+        transform-origin: 50% 50%;
+        will-change: transform, opacity;
+      }
+
+      .stat-panel--cardio .panel-inner {
+        top: 180px;
+      }
+
+      .stat-panel--pressure .panel-inner {
+        top: 430px;
+      }
+
+      .condition-label {
+        display: flex;
+        align-items: center;
+        width: 410px;
+        height: 152px;
+        color: var(--cream);
+        font-size: 54px;
+        font-weight: 700;
+        line-height: 1.12;
+        letter-spacing: -0.035em;
+        white-space: nowrap;
+      }
+
+      .stat-cell {
+        display: flex;
+        align-items: center;
+        width: 352px;
+        height: 152px;
+      }
+
+      .value-slot {
+        position: relative;
+        flex: 0 0 142px;
+        width: 142px;
+        height: 116px;
+        overflow: hidden;
+        color: var(--brand);
+        font-size: 108px;
+        font-weight: 900;
+        line-height: 1;
+        letter-spacing: 0;
+        font-variant-numeric: tabular-nums;
+      }
+
+      .static-zero,
+      .hf-number-wheel {
+        position: absolute;
+        inset: 0;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        width: 100%;
+        height: 100%;
+        white-space: nowrap;
+      }
+
+      .hf-number-wheel {
+        gap: 4px;
+        color: var(--brand);
+        opacity: 0;
+        font-variant-numeric: tabular-nums;
+      }
+
+      .hf-number-wheel-digit {
+        display: inline-block;
+        flex: 0 0 66px;
+        width: 66px;
+        height: 1em;
+        overflow: hidden;
+      }
+
+      .percent-sign {
+        flex: 0 0 66px;
+        margin-left: 12px;
+        color: var(--brand);
+        font-size: 72px;
+        font-weight: 800;
+        line-height: 1;
+      }
+
+      .hf-number-wheel-strip {
+        display: grid;
+        will-change: transform;
+      }
+
+      .hf-number-wheel-strip span {
+        height: 1em;
+        line-height: 1em;
+      }
+
+      .reduction-word {
+        flex: 0 0 auto;
+        margin-left: 20px;
+        color: var(--cream);
+        font-size: 46px;
+        font-weight: 700;
+        line-height: 1;
+        letter-spacing: -0.03em;
+        white-space: nowrap;
+      }
+    </style>
+  </head>
+  <body>
+    <main
+      id="stage"
+      data-composition-id="blueberry-health-stats-rolling"
+      data-start="0"
+      data-duration="5"
+      data-fps="24"
+      data-width="1080"
+      data-height="1920"
+    >
+      <video
+        id="blueberry-background"
+        data-start="0"
+        data-duration="5"
+        data-media-start="0"
+        data-track-index="0"
+        src="assets/video/blueberry_mov.mp4"
+        muted
+        playsinline
+        preload="auto"
+      ></video>
+
+      <section
+        id="cardio-panel"
+        class="clip stat-panel stat-panel--cardio"
+        data-start="0"
+        data-duration="5"
+        data-track-index="1"
+      >
+        <div id="cardio-panel-inner" class="panel-inner">
+          <div class="condition-label">심혈관질환</div>
+          <div class="stat-cell">
+            <div class="value-slot">
+              <span id="cardio-static-zero" class="static-zero">0</span>
+              <span id="cardio-wheel" class="hf-number-wheel" data-value="15"></span>
+            </div>
+            <span class="percent-sign">%</span>
+            <span class="reduction-word">감소</span>
+          </div>
+        </div>
+      </section>
+
+      <section
+        id="pressure-panel"
+        class="clip stat-panel stat-panel--pressure"
+        data-start="0"
+        data-duration="5"
+        data-track-index="2"
+      >
+        <div id="pressure-panel-inner" class="panel-inner">
+          <div class="condition-label">고혈압</div>
+          <div class="stat-cell">
+            <div class="value-slot">
+              <span id="pressure-static-zero" class="static-zero">0</span>
+              <span id="pressure-wheel" class="hf-number-wheel" data-value="10"></span>
+            </div>
+            <span class="percent-sign">%</span>
+            <span class="reduction-word">감소</span>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script>
+      (function () {
+        "use strict";
+
+        // number-wheel component: double spin, tight spacing, accent tone.
+        document.querySelectorAll(".hf-number-wheel").forEach(function (wheel) {
+          if (wheel.dataset.hfNumberWheelReady === "1") return;
+          wheel.style.setProperty("--hf-wheel-gap", "0em");
+          wheel.style.setProperty("--hf-wheel-color", "var(--brand)");
+
+          var value = wheel.dataset.value || "0";
+          wheel.textContent = "";
+          Array.from(value).forEach(function (character) {
+            if (!/\d/.test(character)) {
+              wheel.appendChild(document.createTextNode(character));
+              return;
+            }
+
+            var stops = 10 + Number(character);
+            var frame = document.createElement("span");
+            frame.className = "hf-number-wheel-digit";
+            frame.setAttribute("data-layout-allow-overflow", "");
+            var strip = document.createElement("span");
+            strip.className = "hf-number-wheel-strip";
+            strip.setAttribute("data-layout-allow-overflow", "");
+            strip.style.setProperty("--hf-number-target-y", String(-stops) + "em");
+
+            for (var stepIndex = 0; stepIndex <= stops; stepIndex += 1) {
+              var step = document.createElement("span");
+              step.textContent = String(stepIndex % 10);
+              step.setAttribute("data-layout-allow-overflow", "");
+              strip.appendChild(step);
+            }
+
+            frame.appendChild(strip);
+            wheel.appendChild(frame);
+          });
+          wheel.dataset.hfNumberWheelReady = "1";
+        });
+
+        var cardioStrips = gsap.utils.toArray(
+          ".stat-panel--cardio .hf-number-wheel-strip",
+        );
+        var pressureStrips = gsap.utils.toArray(
+          ".stat-panel--pressure .hf-number-wheel-strip",
+        );
+
+        function targetY(index, strip) {
+          return strip.style.getPropertyValue("--hf-number-target-y");
+        }
+
+        var tl = gsap.timeline({ paused: true });
+
+        tl.fromTo(
+          "#cardio-panel-inner",
+          { y: -28, opacity: 0, scale: 0.985 },
+          { y: 0, opacity: 1, scale: 1, duration: 0.2, ease: "power3.out" },
+          0.15,
+        );
+        tl.fromTo(
+          "#pressure-panel-inner",
+          { y: -24, opacity: 0, scale: 0.985 },
+          { y: 0, opacity: 1, scale: 1, duration: 0.25, ease: "power3.out" },
+          0.25,
+        );
+
+        tl.set(["#cardio-static-zero", "#pressure-static-zero"], { opacity: 0 }, 0.45);
+        tl.set(["#cardio-wheel", "#pressure-wheel"], { opacity: 1 }, 0.45);
+
+        tl.to(
+          cardioStrips,
+          {
+            y: targetY,
+            duration: 3.51,
+            stagger: 0.04,
+            ease: "power1.inOut",
+          },
+          0.45,
+        );
+        tl.to(
+          pressureStrips,
+          {
+            y: targetY,
+            duration: 3.51,
+            stagger: 0.04,
+            ease: "power1.inOut",
+          },
+          0.45,
+        );
+
+        tl.set(cardioStrips, { y: targetY }, 4);
+        tl.set(pressureStrips, { y: targetY }, 4);
+        tl.set(["#cardio-wheel", "#pressure-wheel"], { opacity: 1 }, 4);
+
+        window.__timelines["blueberry-health-stats-rolling"] = tl;
+        tl.seek(0);
+      })();
+    </script>
+  </body>
+</html>

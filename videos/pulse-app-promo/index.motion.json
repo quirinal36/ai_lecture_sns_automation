@@ -1,0 +1,1 @@
+{"duration":10,"assertions":[{"kind":"appearsBy","selector":"#hero","bySec":0.1},{"kind":"appearsBy","selector":"#grid-title","bySec":5.8},{"kind":"appearsBy","selector":"#tagline","bySec":8.1},{"kind":"before","a":"#hero","b":"#wordmark"},{"kind":"staysInFrame","selector":"#tagline"},{"kind":"keepsMoving","withinSelector":"#film","maxStaticSec":2}]}

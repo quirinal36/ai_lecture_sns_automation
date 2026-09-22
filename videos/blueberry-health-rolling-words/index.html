@@ -1,55 +1,266 @@
 <!doctype html>
-<html lang="en" data-resolution="portrait">
+<html lang="ko" data-resolution="portrait">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=1080, height=1920" />
+    <title>블루베리 건강 효능 롤링 타이포그래피</title>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
     <style>
-      * {
-        margin: 0;
-        padding: 0;
+      @font-face {
+        font-family: "Noto Sans KR";
+        src: url("assets/fonts/NotoSansKR-VF.ttf") format("truetype");
+        font-style: normal;
+        font-weight: 100 900;
+        font-display: block;
+      }
+
+      :root {
+        --purple: #32245f;
+        --cream: #fff4dc;
+        --gold: #f4d77a;
+        --ink: #1b1632;
+        --shade-center: rgba(27, 22, 50, 0.46);
+        --shade-edge: rgba(27, 22, 50, 0);
+        --title-shadow: rgba(27, 22, 50, 0.72);
+      }
+
+      *,
+      *::before,
+      *::after {
         box-sizing: border-box;
       }
+
       html,
       body {
+        width: 1080px;
+        height: 1920px;
         margin: 0;
+        overflow: hidden;
+        background: var(--ink);
+      }
+
+      #stage {
+        position: relative;
         width: 1080px;
         height: 1920px;
         overflow: hidden;
-        background: #0a0a0a;
+        font-family: "Noto Sans KR", sans-serif;
       }
-      #root {
+
+      .clip {
+        position: absolute;
+        inset: 0;
         width: 100%;
         height: 100%;
+        overflow: hidden;
+      }
+
+      .background-photo {
+        position: absolute;
+        inset: 0;
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center center;
+      }
+
+      .contrast-shade {
+        position: absolute;
+        left: 70px;
+        top: 690px;
+        width: 940px;
+        height: 550px;
+        background: radial-gradient(
+          ellipse at center,
+          var(--shade-center) 0%,
+          rgba(27, 22, 50, 0.28) 42%,
+          var(--shade-edge) 76%
+        );
+        pointer-events: none;
+      }
+
+      .scene-content {
+        position: relative;
         display: flex;
         align-items: center;
         justify-content: center;
-        font-family: Inter, ui-sans-serif, system-ui, sans-serif;
+        width: 100%;
+        height: 100%;
+        padding: 80px 90px;
       }
-      #title {
-        color: #f4f4f5;
-        font-size: 72px;
-        font-weight: 600;
-        letter-spacing: -0.03em;
+
+      .ticker-window {
+        position: relative;
+        width: 900px;
+        height: 480px;
+        overflow: hidden;
+        perspective: 1200px;
+        perspective-origin: 50% 50%;
+        pointer-events: none;
+      }
+
+      .ticker-wheel {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        transform-style: preserve-3d;
+      }
+
+      .ticker-item {
+        position: absolute;
+        left: 40px;
+        top: 145px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 820px;
+        height: 190px;
+        color: var(--cream);
+        font-size: 132px;
+        font-weight: 900;
+        line-height: 1;
+        letter-spacing: -0.055em;
+        text-align: center;
+        white-space: nowrap;
+        text-shadow: 0 8px 26px var(--title-shadow);
+        transform-origin: 50% 50%;
+        transform-style: preserve-3d;
+        backface-visibility: visible;
+        will-change: transform, opacity;
       }
     </style>
   </head>
   <body>
-    <div
-      id="root"
-      data-composition-id="main"
+    <main
+      id="stage"
+      data-composition-id="blueberry-health-rolling-words"
       data-start="0"
-      data-duration="10"
+      data-duration="5"
+      data-fps="30"
       data-width="1080"
       data-height="1920"
     >
-      <h1 id="title" class="clip" data-start="0" data-duration="10" data-track-index="0">Title</h1>
-    </div>
+      <section
+        id="rolling-health-phrases"
+        class="clip"
+        data-start="0"
+        data-duration="5"
+        data-track-index="0"
+        aria-label="블루베리 건강 효능 세로 롤링 타이포그래피"
+      >
+        <img
+          id="blueberry-health-photo"
+          class="background-photo"
+          src=".media/images/image_001.png"
+          alt="블루베리를 따는 사람"
+        />
+        <div class="contrast-shade" aria-hidden="true"></div>
+
+        <div class="scene-content">
+          <div id="health-ticker-window" class="ticker-window">
+            <div id="health-ticker-wheel" class="ticker-wheel">
+              <div id="phrase-slow-aging" class="ticker-item">저속 노화</div>
+              <div id="phrase-obesity-prevention" class="ticker-item">비만 방지</div>
+              <div id="phrase-vessel-cleaning" class="ticker-item">혈관 청소</div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
     <script>
-      const tl = gsap.timeline({ paused: true });
-      // Example: tl.fromTo("#title", { opacity: 0, y: 24 }, { opacity: 1, y: 0, duration: 0.6 }, 0);
-      window.__timelines["main"] = tl;
-      tl.seek(0);
+      (function () {
+        "use strict";
+
+        var items = Array.prototype.slice.call(document.querySelectorAll(".ticker-item"));
+        var arrival = { p: 0 };
+        var springs = [{ p: 0 }, { p: 0 }];
+
+        var states = [
+          { slot: -2, y: -340, scale: 0.54, opacity: 0, rotateX: 72 },
+          { slot: -1, y: -175, scale: 0.68, opacity: 0.18, rotateX: 54 },
+          { slot: 0, y: 0, scale: 1, opacity: 1, rotateX: 0 },
+          { slot: 1, y: 185, scale: 0.76, opacity: 0.34, rotateX: -42 },
+          { slot: 2, y: 340, scale: 0.54, opacity: 0, rotateX: -72 },
+        ];
+
+        function mix(a, b, p) {
+          return a + (b - a) * p;
+        }
+
+        function stateForSlot(slot) {
+          if (slot <= states[0].slot) return states[0];
+          if (slot >= states[states.length - 1].slot) return states[states.length - 1];
+
+          for (var i = 0; i < states.length - 1; i += 1) {
+            var a = states[i];
+            var b = states[i + 1];
+            if (slot >= a.slot && slot <= b.slot) {
+              var p = (slot - a.slot) / (b.slot - a.slot);
+              return {
+                y: mix(a.y, b.y, p),
+                scale: mix(a.scale, b.scale, p),
+                opacity: mix(a.opacity, b.opacity, p),
+                rotateX: mix(a.rotateX, b.rotateX, p),
+              };
+            }
+          }
+
+          return states[states.length - 1];
+        }
+
+        function applyWheel() {
+          var springProgress = springs.reduce(function (sum, spring) {
+            return sum + spring.p;
+          }, 0);
+          var reelPosition = -1 + arrival.p + springProgress;
+
+          items.forEach(function (item, index) {
+            var state = stateForSlot(index - reelPosition);
+            item.style.opacity = String(Math.max(0, Math.min(1, state.opacity)));
+            item.style.transform =
+              "translate3d(0," +
+              state.y.toFixed(3) +
+              "px,0) scale(" +
+              state.scale.toFixed(5) +
+              ") rotateX(" +
+              state.rotateX.toFixed(3) +
+              "deg)";
+          });
+        }
+
+        applyWheel();
+
+        var tl = gsap.timeline({ paused: true });
+
+        tl.to(
+          arrival,
+          {
+            p: 1,
+            duration: 0.47,
+            ease: "back.out(1.55)",
+            onUpdate: applyWheel,
+          },
+          0.2,
+        );
+
+        springs.forEach(function (spring, index) {
+          tl.to(
+            spring,
+            {
+              p: 1,
+              duration: 0.5,
+              ease: "back.out(1.55)",
+              onUpdate: applyWheel,
+            },
+            1.45 + index * 1.35,
+          );
+        });
+
+        window.__timelines["blueberry-health-rolling-words"] = tl;
+        tl.seek(0);
+      })();
     </script>
   </body>
 </html>

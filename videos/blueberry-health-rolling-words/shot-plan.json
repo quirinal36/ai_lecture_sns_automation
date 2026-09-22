@@ -1,5 +1,5 @@
 {
-  "status": "draft",
+  "status": "final",
   "category": "kinetic-type",
   "duration_s": 5,
   "fps": 30,
@@ -8,20 +8,198 @@
     "h": 1920,
     "aspect": "9:16"
   },
-  "style": "깨끗하고 밝은 웰니스 에디토리얼 스타일의 세로형 깊이 캐러셀. 사용자 제공 블루베리 피킹 before 사진은 전체 화면 정지 배경으로 보존하고, 중앙의 세 건강 문구만 한 축을 따라 앞으로 들어왔다가 위쪽 후방으로 회전해 물러난다. 중심 문구는 크고 선명하며, 뒤로 넘어가는 문구는 축소와 반투명 처리로 깊이를 만든다. 사진 위 가독성을 위한 제한적인 명암 오버레이만 허용한다.",
-  "palette": "derive-from-asset",
+  "style": "깨끗하고 밝은 웰니스 에디토리얼 스타일의 중앙 3D 롤링 타이포그래피. 블루베리 피킹 사진은 색보정과 카메라 움직임 없이 전체 화면에 고정하고, 중앙의 세 건강 문구만 동일한 수직 축에서 두 번 스프링 스텝한다. 현재 문구는 크고 선명하며, 지나간 문구는 위쪽 후방으로 회전하면서 작고 반투명해진다.",
+  "palette": [
+    "#32245F",
+    "#FFF4DC",
+    "#F4D77A",
+    "#1B1632"
+  ],
   "font": "Noto Sans KR",
   "beats": [
-    0.3,
-    1.3,
-    1.67,
-    2.95,
-    3.33,
-    4.65
+    6,
+    20,
+    44,
+    59,
+    84,
+    99,
+    145
   ],
   "export": "mp4",
   "asset_needs": [],
-  "shot_brief": "블루베리 피킹 사진이 움직임 없이 전체 화면을 채운 상태에서 '저속 노화', '비만 방지', '혈관 청소'가 차례로 화면 정중앙의 초점 자리에 들어온다. 각 문구는 아래쪽 전경에서 커지며 중심에 정착하고, 다음 문구가 올라올 때 위쪽 후방으로 말려 들어가듯 작아지고 반투명해진다. 세 전환 모두 동일한 수직 롤링 축을 공유하는 것이 단일 지배적 모션 아이디어이며, 마지막 문구는 충분히 읽힌 뒤 정지 상태로 마무리한다.",
+  "block": "ticker-takeover",
+  "shot_brief": "고정된 블루베리 피킹 사진 위에서 '저속 노화', '비만 방지', '혈관 청소'가 하나의 세로형 3D 릴처럼 화면 정중앙을 차례로 점유한다. 각 전환은 아래 문구가 중심으로 올라오는 동시에 이전 문구가 위쪽 후방으로 말려 들어가며 축소·반투명해지는 결합 동작이다. 두 번의 명확한 스프링 스텝 뒤 '혈관 청소'가 완전한 초점 상태로 1.7초 유지되는 것이 최종 인상이다.",
+  "customize": {
+    "background_asset": ".media/images/image_001.png",
+    "background_fit": "cover at 1080x1920; preserve the original framing with no animated crop",
+    "background_treatment": "no retouch, color grade, blur, zoom, pan, or parallax",
+    "contrast_overlay": {
+      "type": "localized radial-to-transparent shade",
+      "bounds_px": {
+        "x": 70,
+        "y": 690,
+        "w": 940,
+        "h": 550
+      },
+      "center_color": "rgba(27, 22, 50, 0.46)",
+      "edge_color": "rgba(27, 22, 50, 0)",
+      "purpose": "text legibility only; keep the photo visible outside and through the soft shade"
+    },
+    "reuse_component": {
+      "id": "ticker-takeover",
+      "adaptation": "replace the mono option list with three Korean health phrases, keep its discrete option roll and final lock, and remove accent flash/full-frame promotion"
+    },
+    "animation_rule": {
+      "id": "vertical-spring-ticker",
+      "steps": 2,
+      "item_height_px": 190,
+      "step_duration_s": 0.5,
+      "step_spacing_s": 1.35,
+      "bounce_factor": 1.55,
+      "implementation_note": "each step owns an additive 0-to-1 spring; sum spring progress to drive the common reel position rather than tweening a final translate value"
+    },
+    "copy": [
+      "저속 노화",
+      "비만 방지",
+      "혈관 청소"
+    ],
+    "layout": {
+      "focal_center_px": {
+        "x": 540,
+        "y": 960
+      },
+      "ticker_window_px": {
+        "x": 90,
+        "y": 720,
+        "w": 900,
+        "h": 480
+      },
+      "perspective_px": 1200,
+      "perspective_origin": "50% 50%",
+      "item_width_px": 820,
+      "item_height_px": 190,
+      "font_size_px": 132,
+      "font_weight": 900,
+      "line_height": 1,
+      "tracking_em": -0.055,
+      "alignment": "center",
+      "text_color": "#FFF4DC",
+      "text_shadow": "0 8px 26px rgba(27, 22, 50, 0.72)",
+      "safe_area_rationale": "the user explicitly requested center placement; keep the wheel compact and the contrast shade localized so the face, picking hand, berries, and basket remain recognizable"
+    },
+    "depth_states": {
+      "incoming_front": {
+        "translateY_px": 185,
+        "scale": 0.76,
+        "opacity": 0.34,
+        "rotateX_deg": -42
+      },
+      "center_focus": {
+        "translateY_px": 0,
+        "scale": 1,
+        "opacity": 1,
+        "rotateX_deg": 0
+      },
+      "outgoing_rear": {
+        "translateY_px": -175,
+        "scale": 0.68,
+        "opacity": 0.18,
+        "rotateX_deg": 54
+      },
+      "hidden_rear": {
+        "translateY_px": -340,
+        "scale": 0.54,
+        "opacity": 0,
+        "rotateX_deg": 72
+      }
+    },
+    "motion_timing": [
+      {
+        "range_s": [
+          0,
+          0.2
+        ],
+        "action": "untouched photo and localized contrast shade establish; all phrases begin below or outside the focal state"
+      },
+      {
+        "range_s": [
+          0.2,
+          0.67
+        ],
+        "action": "저속 노화 rolls from incoming_front to center_focus with the first arrival spring"
+      },
+      {
+        "range_s": [
+          0.67,
+          1.45
+        ],
+        "action": "저속 노화 holds fully readable at center_focus"
+      },
+      {
+        "range_s": [
+          1.45,
+          1.95
+        ],
+        "action": "spring step 1: 저속 노화 moves to outgoing_rear while 비만 방지 moves from incoming_front to center_focus on the same shared progress"
+      },
+      {
+        "range_s": [
+          1.95,
+          2.8
+        ],
+        "action": "비만 방지 holds fully readable; 저속 노화 remains small and translucent in the rear slot"
+      },
+      {
+        "range_s": [
+          2.8,
+          3.3
+        ],
+        "action": "spring step 2: 저속 노화 moves to hidden_rear, 비만 방지 moves to outgoing_rear, and 혈관 청소 moves from incoming_front to center_focus"
+      },
+      {
+        "range_s": [
+          3.3,
+          5
+        ],
+        "action": "혈관 청소 locks at center_focus without flash, pulse, drift, or exit; 비만 방지 stays as the small translucent rear word"
+      }
+    ],
+    "transition_constraints": {
+      "shared_axis": "all phrases use the same center x and rotate around the same horizontal axis",
+      "coupling": "incoming and outgoing phrase transforms are driven by the same normalized spring progress so no gap opens at center",
+      "masking": "clip only outside the 480px ticker window; do not crop the center phrase",
+      "settle": "every step ends on authored absolute transforms with no infinite repeat and no idle motion",
+      "final_dwell_s": 1.7
+    },
+    "audio": "none",
+    "narration": "none",
+    "additional_copy": "none",
+    "catalog_searches": [
+      {
+        "query": "vertical rolling words carousel text depth scale opacity",
+        "selected": "ticker-takeover",
+        "decision": "best reusable base for rolling options and locking the final phrase"
+      },
+      {
+        "query": "vertical slot machine words center focus",
+        "tier": "words",
+        "selected": "slot-machine-roll",
+        "decision": "not selected as the main component because it is character-reel oriented; its discrete reel behavior is covered more directly by vertical-spring-ticker"
+      },
+      {
+        "query": "3d wheel text carousel depth opacity perspective",
+        "tier": "words",
+        "selected": "perspective-marquee",
+        "decision": "not selected because it is a continuous horizon marquee rather than three discrete centered phrase stops"
+      },
+      {
+        "query": "rolling words final phrase lock",
+        "tier": "words",
+        "selected": "ticker-takeover",
+        "decision": "confirms the component's final-option lock behavior"
+      }
+    ]
+  },
   "content": {
     "scenes": [
       {
@@ -33,11 +211,11 @@
           "저속 노화"
         ],
         "emotion": "신선한 발견과 건강한 자신감",
-        "motion": "Hook: 아래쪽 전경에서 중심으로 세로 롤인해 0.5초 안에 크게 선명해진다. 중심에서 잠시 읽힌 뒤 다음 문구를 위해 위쪽 후방으로 회전하며 크기가 줄고 투명도가 높아진다.",
+        "motion": "0.20초에 아래 전경 상태에서 중앙 초점으로 롤인해 0.67초에 정착한다. 1.45초부터 첫 스프링 스텝으로 위쪽 후방을 향해 scale 0.68, opacity 0.18, rotateX 54deg, translateY -175px 상태로 물러난다.",
         "beats": [
-          0.3,
-          0.55,
-          1.3
+          0.2,
+          0.67,
+          1.45
         ]
       },
       {
@@ -49,11 +227,11 @@
           "비만 방지"
         ],
         "emotion": "경쾌하고 명료한 효능 전달",
-        "motion": "Build: 첫 문구가 후방으로 물러나는 동일한 회전 흐름을 이어받아 아래에서 중심 초점으로 들어온다. 크게 선명한 중심 홀드를 가진 뒤 위쪽 후방으로 축소·반투명 롤아웃한다.",
+        "motion": "1.45-1.95초에 첫 문구와 결합된 스프링으로 중앙에 들어와 2.80초까지 선명하게 유지된다. 2.80-3.30초 두 번째 스텝에서 위쪽 후방 상태로 축소·반투명 회전한다.",
         "beats": [
           1.67,
-          2.0,
-          2.95
+          1.95,
+          2.8
         ]
       },
       {
@@ -65,11 +243,11 @@
           "혈관 청소"
         ],
         "emotion": "확신 있는 마지막 결론",
-        "motion": "Punch → Resolve: 앞선 문구와 같은 축에서 아래로부터 중심에 롤인해 가장 또렷하게 정착한다. 4.0초 이후에는 크기와 불투명도를 고정해 마지막 프레임까지 읽기 쉬운 상태로 유지한다.",
+        "motion": "2.80-3.30초에 아래 전경에서 중앙 초점으로 최종 롤인한다. 3.30초부터 scale 1, opacity 1, rotateX 0deg, translateY 0px 상태로 잠기고 마지막 프레임까지 1.70초간 완전히 정지한다.",
         "beats": [
           3.33,
-          3.68,
-          4.65
+          4,
+          4.83
         ]
       }
     ]

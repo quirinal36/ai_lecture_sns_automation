@@ -1,0 +1,752 @@
+{
+  "ok": true,
+  "strict": false,
+  "lint": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 1,
+    "infoCount": 0,
+    "findings": [
+      {
+        "code": "nested_structure_needs_subcomposition",
+        "severity": "warning",
+        "message": "<div id=\"film\"> is a timeline element that contains nested <div id=\"paper-content\">. The timeline shows one row per top-level element, and the root composition is built only from sub-compositions.",
+        "selector": "#film",
+        "dataAttributes": {},
+        "sourceFile": "C:\\Users\\Albert\\Documents\\GitHub\\ai_lecture_sns_automation\\videos\\pulse-app-promo\\index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Move <div id=\"film\"> and its contents into a sub-composition file and mount it with data-composition-src."
+      }
+    ],
+    "filesScanned": 1
+  },
+  "runtime": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 0,
+    "infoCount": 0,
+    "findings": []
+  },
+  "layout": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 0,
+    "infoCount": 21,
+    "findings": [
+      {
+        "code": "content_overlap",
+        "severity": "info",
+        "time": 4,
+        "selector": "span.brand-small",
+        "message": "Two text blocks overlap and may render unreadable.",
+        "rect": {
+          "left": 104,
+          "top": 80,
+          "right": 181.95,
+          "bottom": 117,
+          "width": 77.95,
+          "height": 37
+        },
+        "containerSelector": "#sat-0 > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(6) > div:nth-of-type(2) > strong:nth-of-type(1)",
+        "text": "PULSE",
+        "fixHint": "Give each block its own zone, or mark intentional layering with data-layout-allow-overlap.",
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 104,
+          "y": 80,
+          "width": 77.95,
+          "height": 37
+        },
+        "firstSeen": 4,
+        "lastSeen": 4,
+        "occurrences": 1,
+        "heldMs": 0
+      },
+      {
+        "code": "content_overlap",
+        "severity": "info",
+        "time": 4.125,
+        "selector": "div.topline > span:nth-of-type(2)",
+        "message": "Two text blocks overlap and may render unreadable.",
+        "rect": {
+          "left": 819.69,
+          "top": 85.5,
+          "right": 1000,
+          "bottom": 111.5,
+          "width": 180.31,
+          "height": 26
+        },
+        "containerSelector": "#sat-2 > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(5) > span:nth-of-type(2)",
+        "text": "MAKE IT YOURS.",
+        "fixHint": "Give each block its own zone, or mark intentional layering with data-layout-allow-overlap.",
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 819.69,
+          "y": 85.5,
+          "width": 180.31,
+          "height": 26
+        },
+        "firstSeen": 4.125,
+        "lastSeen": 4.125,
+        "occurrences": 1,
+        "heldMs": 0
+      },
+      {
+        "code": "text_occluded",
+        "severity": "info",
+        "time": 6.111,
+        "selector": "div.topline > span:nth-of-type(2)",
+        "message": "Text is hidden beneath an opaque element.",
+        "rect": {
+          "left": 819.69,
+          "top": 85.5,
+          "right": 1000,
+          "bottom": 111.5,
+          "width": 180.31,
+          "height": 26
+        },
+        "containerSelector": "#sat-2 > div:nth-of-type(1) > div:nth-of-type(1)",
+        "text": "MAKE IT YOURS.",
+        "fixHint": "Give the text its own zone, raise its stacking order above the covering element, or mark intentional layering with data-layout-allow-occlusion.",
+        "coveredFraction": 0.22,
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 819.69,
+          "y": 85.5,
+          "width": 180.31,
+          "height": 26
+        },
+        "firstSeen": 6.111,
+        "lastSeen": 6.111,
+        "occurrences": 1,
+        "heldMs": 0
+      },
+      {
+        "code": "text_occluded",
+        "severity": "info",
+        "time": 6.111,
+        "selector": "#sat-3 > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(4) > span:nth-of-type(1)",
+        "message": "Text is hidden beneath an opaque element.",
+        "rect": {
+          "left": 279.9,
+          "top": 465.83,
+          "right": 331.33,
+          "bottom": 475.32,
+          "width": 51.43,
+          "height": 9.49
+        },
+        "containerSelector": "#grid-title > span:nth-of-type(1)",
+        "text": "DAILY MIX / 01",
+        "fixHint": "Give the text its own zone, raise its stacking order above the covering element, or mark intentional layering with data-layout-allow-occlusion.",
+        "coveredFraction": 1,
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 279.9,
+          "y": 465.83,
+          "width": 51.43,
+          "height": 9.49
+        },
+        "firstSeen": 6.111,
+        "lastSeen": 6.111,
+        "occurrences": 1,
+        "heldMs": 0
+      },
+      {
+        "code": "text_occluded",
+        "severity": "info",
+        "time": 6.111,
+        "selector": "#sat-3 > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(4) > span:nth-of-type(2)",
+        "message": "Text is hidden beneath an opaque element.",
+        "rect": {
+          "left": 274.54,
+          "top": 540.86,
+          "right": 322.51,
+          "bottom": 576.93,
+          "width": 47.96,
+          "height": 36.07
+        },
+        "containerSelector": "#grid-title > span:nth-of-type(1)",
+        "text": "Goodenergy.",
+        "fixHint": "Give the text its own zone, raise its stacking order above the covering element, or mark intentional layering with data-layout-allow-occlusion.",
+        "coveredFraction": 1,
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 274.54,
+          "y": 540.86,
+          "width": 47.96,
+          "height": 36.07
+        },
+        "firstSeen": 6.111,
+        "lastSeen": 6.111,
+        "occurrences": 1,
+        "heldMs": 0
+      },
+      {
+        "code": "text_occluded",
+        "severity": "info",
+        "time": 6.111,
+        "selector": "#sat-3 > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(4) > span:nth-of-type(3)",
+        "message": "Text is hidden beneath an opaque element.",
+        "rect": {
+          "left": 382.56,
+          "top": 563.84,
+          "right": 390.97,
+          "bottom": 574.76,
+          "width": 8.41,
+          "height": 10.92
+        },
+        "containerSelector": "#grid-title > span:nth-of-type(1)",
+        "text": "▶",
+        "fixHint": "Give the text its own zone, raise its stacking order above the covering element, or mark intentional layering with data-layout-allow-occlusion.",
+        "coveredFraction": 1,
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 382.56,
+          "y": 563.84,
+          "width": 8.41,
+          "height": 10.92
+        },
+        "firstSeen": 6.111,
+        "lastSeen": 6.111,
+        "occurrences": 1,
+        "heldMs": 0
+      },
+      {
+        "code": "text_occluded",
+        "severity": "info",
+        "time": 6.111,
+        "selector": "#sat-3 > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(5) > span:nth-of-type(1)",
+        "message": "Text is hidden beneath an opaque element.",
+        "rect": {
+          "left": 264.25,
+          "top": 589.13,
+          "right": 331.38,
+          "bottom": 599.82,
+          "width": 67.13,
+          "height": 10.69
+        },
+        "containerSelector": "#grid-title > span:nth-of-type(1)",
+        "text": "당신을 위한 플레이리스트",
+        "fixHint": "Give the text its own zone, raise its stacking order above the covering element, or mark intentional layering with data-layout-allow-occlusion.",
+        "coveredFraction": 1,
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 264.25,
+          "y": 589.13,
+          "width": 67.13,
+          "height": 10.69
+        },
+        "firstSeen": 6.111,
+        "lastSeen": 6.111,
+        "occurrences": 1,
+        "heldMs": 0
+      },
+      {
+        "code": "text_occluded",
+        "severity": "info",
+        "time": 6.111,
+        "selector": "#sat-3 > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(5) > span:nth-of-type(2)",
+        "message": "Text is hidden beneath an opaque element.",
+        "rect": {
+          "left": 398.11,
+          "top": 595.6,
+          "right": 404.17,
+          "bottom": 603.34,
+          "width": 6.07,
+          "height": 7.74
+        },
+        "containerSelector": "#grid-title > span:nth-of-type(1)",
+        "text": "↗",
+        "fixHint": "Give the text its own zone, raise its stacking order above the covering element, or mark intentional layering with data-layout-allow-occlusion.",
+        "coveredFraction": 1,
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 398.11,
+          "y": 595.6,
+          "width": 6.07,
+          "height": 7.74
+        },
+        "firstSeen": 6.111,
+        "lastSeen": 6.111,
+        "occurrences": 1,
+        "heldMs": 0
+      },
+      {
+        "code": "text_occluded",
+        "severity": "info",
+        "time": 6.111,
+        "selector": "#sat-3 > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(6) > div:nth-of-type(1) > span:nth-of-type(1)",
+        "message": "Text is hidden beneath an opaque element.",
+        "rect": {
+          "left": 269.79,
+          "top": 611.39,
+          "right": 287.18,
+          "bottom": 619.24,
+          "width": 17.39,
+          "height": 7.85
+        },
+        "containerSelector": "#grid-title > span:nth-of-type(1)",
+        "text": "FOCUS",
+        "fixHint": "Give the text its own zone, raise its stacking order above the covering element, or mark intentional layering with data-layout-allow-occlusion.",
+        "coveredFraction": 1,
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 269.79,
+          "y": 611.39,
+          "width": 17.39,
+          "height": 7.85
+        },
+        "firstSeen": 6.111,
+        "lastSeen": 6.111,
+        "occurrences": 1,
+        "heldMs": 0
+      },
+      {
+        "code": "text_occluded",
+        "severity": "info",
+        "time": 6.111,
+        "selector": "#sat-3 > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(6) > div:nth-of-type(2) > span:nth-of-type(1)",
+        "message": "Text is hidden beneath an opaque element.",
+        "rect": {
+          "left": 342.21,
+          "top": 614.89,
+          "right": 365.09,
+          "bottom": 623,
+          "width": 22.88,
+          "height": 8.11
+        },
+        "containerSelector": "#grid-title > span:nth-of-type(1)",
+        "text": "EXPLORE",
+        "fixHint": "Give the text its own zone, raise its stacking order above the covering element, or mark intentional layering with data-layout-allow-occlusion.",
+        "coveredFraction": 0.67,
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 342.21,
+          "y": 614.89,
+          "width": 22.88,
+          "height": 8.11
+        },
+        "firstSeen": 6.111,
+        "lastSeen": 6.111,
+        "occurrences": 1,
+        "heldMs": 0
+      },
+      {
+        "code": "text_occluded",
+        "severity": "info",
+        "time": 6.111,
+        "selector": "#sat-4 > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(3)",
+        "message": "Text is hidden beneath an opaque element.",
+        "rect": {
+          "left": 675.2,
+          "top": 430.23,
+          "right": 753.7,
+          "bottom": 471.36,
+          "width": 78.5,
+          "height": 41.12
+        },
+        "containerSelector": "#grid-title > span:nth-of-type(1)",
+        "text": "오늘의 영감,여기서 시작.",
+        "fixHint": "Give the text its own zone, raise its stacking order above the covering element, or mark intentional layering with data-layout-allow-occlusion.",
+        "coveredFraction": 0.33,
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 675.2,
+          "y": 430.23,
+          "width": 78.5,
+          "height": 41.12
+        },
+        "firstSeen": 6.111,
+        "lastSeen": 6.111,
+        "occurrences": 1,
+        "heldMs": 0
+      },
+      {
+        "code": "text_occluded",
+        "severity": "info",
+        "time": 6.111,
+        "selector": "#sat-4 > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(4) > span:nth-of-type(1)",
+        "message": "Text is hidden beneath an opaque element.",
+        "rect": {
+          "left": 683.68,
+          "top": 485.34,
+          "right": 735.11,
+          "bottom": 494.83,
+          "width": 51.43,
+          "height": 9.49
+        },
+        "containerSelector": "#grid-title > span:nth-of-type(1)",
+        "text": "DAILY MIX / 01",
+        "fixHint": "Give the text its own zone, raise its stacking order above the covering element, or mark intentional layering with data-layout-allow-occlusion.",
+        "coveredFraction": 1,
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 683.68,
+          "y": 485.34,
+          "width": 51.43,
+          "height": 9.49
+        },
+        "firstSeen": 6.111,
+        "lastSeen": 6.111,
+        "occurrences": 1,
+        "heldMs": 0
+      },
+      {
+        "code": "text_occluded",
+        "severity": "info",
+        "time": 6.111,
+        "selector": "#sat-4 > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(4) > span:nth-of-type(2)",
+        "message": "Text is hidden beneath an opaque element.",
+        "rect": {
+          "left": 678.32,
+          "top": 560.37,
+          "right": 726.28,
+          "bottom": 596.44,
+          "width": 47.96,
+          "height": 36.07
+        },
+        "containerSelector": "#grid-title > span:nth-of-type(1)",
+        "text": "Goodenergy.",
+        "fixHint": "Give the text its own zone, raise its stacking order above the covering element, or mark intentional layering with data-layout-allow-occlusion.",
+        "coveredFraction": 1,
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 678.32,
+          "y": 560.37,
+          "width": 47.96,
+          "height": 36.07
+        },
+        "firstSeen": 6.111,
+        "lastSeen": 6.111,
+        "occurrences": 1,
+        "heldMs": 0
+      },
+      {
+        "code": "text_occluded",
+        "severity": "info",
+        "time": 6.111,
+        "selector": "#sat-4 > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(4) > span:nth-of-type(3)",
+        "message": "Text is hidden beneath an opaque element.",
+        "rect": {
+          "left": 786.33,
+          "top": 583.35,
+          "right": 794.74,
+          "bottom": 594.27,
+          "width": 8.41,
+          "height": 10.92
+        },
+        "containerSelector": "#grid-title > span:nth-of-type(1)",
+        "text": "▶",
+        "fixHint": "Give the text its own zone, raise its stacking order above the covering element, or mark intentional layering with data-layout-allow-occlusion.",
+        "coveredFraction": 1,
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 786.33,
+          "y": 583.35,
+          "width": 8.41,
+          "height": 10.92
+        },
+        "firstSeen": 6.111,
+        "lastSeen": 6.111,
+        "occurrences": 1,
+        "heldMs": 0
+      },
+      {
+        "code": "text_occluded",
+        "severity": "info",
+        "time": 6.111,
+        "selector": "#sat-4 > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(5) > span:nth-of-type(1)",
+        "message": "Text is hidden beneath an opaque element.",
+        "rect": {
+          "left": 668.02,
+          "top": 608.64,
+          "right": 735.16,
+          "bottom": 619.33,
+          "width": 67.13,
+          "height": 10.69
+        },
+        "containerSelector": "#grid-title > span:nth-of-type(1)",
+        "text": "당신을 위한 플레이리스트",
+        "fixHint": "Give the text its own zone, raise its stacking order above the covering element, or mark intentional layering with data-layout-allow-occlusion.",
+        "coveredFraction": 1,
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 668.02,
+          "y": 608.64,
+          "width": 67.13,
+          "height": 10.69
+        },
+        "firstSeen": 6.111,
+        "lastSeen": 6.111,
+        "occurrences": 1,
+        "heldMs": 0
+      },
+      {
+        "code": "text_occluded",
+        "severity": "info",
+        "time": 6.111,
+        "selector": "#sat-4 > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(5) > span:nth-of-type(2)",
+        "message": "Text is hidden beneath an opaque element.",
+        "rect": {
+          "left": 801.88,
+          "top": 615.11,
+          "right": 807.95,
+          "bottom": 622.85,
+          "width": 6.07,
+          "height": 7.74
+        },
+        "containerSelector": "#grid-title > span:nth-of-type(1)",
+        "text": "↗",
+        "fixHint": "Give the text its own zone, raise its stacking order above the covering element, or mark intentional layering with data-layout-allow-occlusion.",
+        "coveredFraction": 0.67,
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 801.88,
+          "y": 615.11,
+          "width": 6.07,
+          "height": 7.74
+        },
+        "firstSeen": 6.111,
+        "lastSeen": 6.111,
+        "occurrences": 1,
+        "heldMs": 0
+      },
+      {
+        "code": "text_occluded",
+        "severity": "info",
+        "time": 6.111,
+        "selector": "#screen > div:nth-of-type(3) > div:nth-of-type(4) > span:nth-of-type(1)",
+        "message": "Text is hidden beneath an opaque element.",
+        "rect": {
+          "left": 481.79,
+          "top": 475.59,
+          "right": 533.22,
+          "bottom": 485.08,
+          "width": 51.43,
+          "height": 9.49
+        },
+        "containerSelector": "#grid-title > span:nth-of-type(1)",
+        "text": "DAILY MIX / 01",
+        "fixHint": "Give the text its own zone, raise its stacking order above the covering element, or mark intentional layering with data-layout-allow-occlusion.",
+        "coveredFraction": 1,
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 481.79,
+          "y": 475.59,
+          "width": 51.43,
+          "height": 9.49
+        },
+        "firstSeen": 6.111,
+        "lastSeen": 6.111,
+        "occurrences": 1,
+        "heldMs": 0
+      },
+      {
+        "code": "text_occluded",
+        "severity": "info",
+        "time": 6.111,
+        "selector": "#screen > div:nth-of-type(3) > div:nth-of-type(4) > span:nth-of-type(2)",
+        "message": "Text is hidden beneath an opaque element.",
+        "rect": {
+          "left": 476.43,
+          "top": 550.62,
+          "right": 524.4,
+          "bottom": 586.68,
+          "width": 47.96,
+          "height": 36.07
+        },
+        "containerSelector": "#grid-title > span:nth-of-type(1)",
+        "text": "Goodenergy.",
+        "fixHint": "Give the text its own zone, raise its stacking order above the covering element, or mark intentional layering with data-layout-allow-occlusion.",
+        "coveredFraction": 1,
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 476.43,
+          "y": 550.62,
+          "width": 47.96,
+          "height": 36.07
+        },
+        "firstSeen": 6.111,
+        "lastSeen": 6.111,
+        "occurrences": 1,
+        "heldMs": 0
+      },
+      {
+        "code": "text_occluded",
+        "severity": "info",
+        "time": 6.111,
+        "selector": "#screen > div:nth-of-type(3) > div:nth-of-type(4) > span:nth-of-type(3)",
+        "message": "Text is hidden beneath an opaque element.",
+        "rect": {
+          "left": 584.44,
+          "top": 573.6,
+          "right": 592.85,
+          "bottom": 584.51,
+          "width": 8.41,
+          "height": 10.92
+        },
+        "containerSelector": "#grid-title > span:nth-of-type(1)",
+        "text": "▶",
+        "fixHint": "Give the text its own zone, raise its stacking order above the covering element, or mark intentional layering with data-layout-allow-occlusion.",
+        "coveredFraction": 1,
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 584.44,
+          "y": 573.6,
+          "width": 8.41,
+          "height": 10.92
+        },
+        "firstSeen": 6.111,
+        "lastSeen": 6.111,
+        "occurrences": 1,
+        "heldMs": 0
+      },
+      {
+        "code": "text_occluded",
+        "severity": "info",
+        "time": 6.111,
+        "selector": "#screen > div:nth-of-type(3) > div:nth-of-type(5) > span:nth-of-type(1)",
+        "message": "Text is hidden beneath an opaque element.",
+        "rect": {
+          "left": 466.13,
+          "top": 598.89,
+          "right": 533.27,
+          "bottom": 609.57,
+          "width": 67.13,
+          "height": 10.69
+        },
+        "containerSelector": "#grid-title > span:nth-of-type(1)",
+        "text": "당신을 위한 플레이리스트",
+        "fixHint": "Give the text its own zone, raise its stacking order above the covering element, or mark intentional layering with data-layout-allow-occlusion.",
+        "coveredFraction": 1,
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 466.13,
+          "y": 598.89,
+          "width": 67.13,
+          "height": 10.69
+        },
+        "firstSeen": 6.111,
+        "lastSeen": 6.111,
+        "occurrences": 1,
+        "heldMs": 0
+      },
+      {
+        "code": "text_occluded",
+        "severity": "info",
+        "time": 6.111,
+        "selector": "#screen > div:nth-of-type(3) > div:nth-of-type(5) > span:nth-of-type(2)",
+        "message": "Text is hidden beneath an opaque element.",
+        "rect": {
+          "left": 600,
+          "top": 605.35,
+          "right": 606.06,
+          "bottom": 613.09,
+          "width": 6.07,
+          "height": 7.74
+        },
+        "containerSelector": "#grid-title > span:nth-of-type(1)",
+        "text": "↗",
+        "fixHint": "Give the text its own zone, raise its stacking order above the covering element, or mark intentional layering with data-layout-allow-occlusion.",
+        "coveredFraction": 1,
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 600,
+          "y": 605.35,
+          "width": 6.07,
+          "height": 7.74
+        },
+        "firstSeen": 6.111,
+        "lastSeen": 6.111,
+        "occurrences": 1,
+        "heldMs": 0
+      }
+    ],
+    "duration": 10,
+    "samples": [
+      0.556,
+      1.667,
+      2.778,
+      3.889,
+      5,
+      6.111,
+      7.222,
+      8.333,
+      9.444
+    ],
+    "transitionSamples": [],
+    "transitionSamplesDropped": 0,
+    "tolerance": 2,
+    "totalIssueCount": 21,
+    "truncated": false
+  },
+  "motion": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 0,
+    "infoCount": 0,
+    "findings": [],
+    "enabled": true,
+    "specPath": "C:\\Users\\Albert\\Documents\\GitHub\\ai_lecture_sns_automation\\videos\\pulse-app-promo\\index.motion.json",
+    "samples": 201
+  },
+  "contrast": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 0,
+    "infoCount": 0,
+    "findings": [],
+    "enabled": true,
+    "samples": [
+      0.556,
+      2.778,
+      5,
+      7.222,
+      9.444
+    ],
+    "checked": 194,
+    "passed": 194
+  },
+  "hdr": {
+    "autoPromotion": null,
+    "inspection": "available"
+  },
+  "snapshots": {
+    "enabled": false,
+    "files": [],
+    "times": [],
+    "findingFiles": []
+  },
+  "_meta": {
+    "version": "0.8.60",
+    "latestVersion": "0.8.60",
+    "updateAvailable": false
+  }
+}

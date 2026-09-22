@@ -1,0 +1,23 @@
+{
+  "composition": "pulse",
+  "duration": 10,
+  "runtime": "gsap",
+  "subject": "#camera / continuous physical phone ensemble",
+  "proofTimes": [0, 1.2, 2.65, 4.65, 5.8, 7.7, 8.5, 9.9667],
+  "poses": [
+    {"time":0,"label":"Hero angled phone", "scale":0.87,"rotation":-19,"rotationY":-27,"y":76},
+    {"time":1.65,"label":"Phone opposing pivot", "scale":0.84,"rotation":7,"rotationY":17,"y":93},
+    {"time":2.6,"label":"UI approach", "scale":1.52,"rotation":-8,"rotationY":-12,"y":270},
+    {"time":3.35,"label":"Closeup counterturn", "scale":1.4,"rotation":8,"rotationY":14,"y":220},
+    {"time":4.55,"label":"Nine phone reveal", "scale":0.4,"rotation":-12,"rotationY":0,"y":0},
+    {"time":6.25,"label":"Expanded ensemble", "scale":0.44,"rotation":3,"rotationY":0,"y":-15},
+    {"time":8.41,"label":"Brand lockup hold", "visible":"#end", "tagline":"일상을, 내 리듬으로."}
+  ],
+  "reuse": {
+    "device-frame-stage":"Customized shell material, screen safe area, bezel and thickness",
+    "parallax-zoom":"Customized offset sibling fan from 1.9× grid spacing to 1×",
+    "headline-slam":"Scale 1.6 to 1 expo.out for grid text and final PULSE"
+  },
+  "intentionalOverflow":"Phone surfaces and grid cross edges during dolly; all essential end typography inside 80px safe margin.",
+  "audio":"Silent by design; no narration or external assets."
+}

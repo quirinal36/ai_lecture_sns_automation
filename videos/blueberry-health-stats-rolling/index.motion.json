@@ -1,0 +1,14 @@
+{
+  "duration": 5,
+  "assertions": [
+    { "kind": "appearsBy", "selector": "#cardio-panel-inner", "bySec": 0.35 },
+    { "kind": "appearsBy", "selector": "#pressure-panel-inner", "bySec": 0.5 },
+    { "kind": "appearsBy", "selector": "#cardio-wheel", "bySec": 0.5 },
+    { "kind": "appearsBy", "selector": "#pressure-wheel", "bySec": 0.5 },
+    { "kind": "before", "a": "#cardio-panel-inner", "b": "#pressure-panel-inner" },
+    { "kind": "staysInFrame", "selector": "#cardio-panel-inner" },
+    { "kind": "staysInFrame", "selector": "#pressure-panel-inner" },
+    { "kind": "staysInFrame", "selector": "#cardio-wheel" },
+    { "kind": "staysInFrame", "selector": "#pressure-wheel" }
+  ]
+}

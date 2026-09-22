@@ -12,9 +12,9 @@
   "authoringSkill": "motion-graphics",
   "registryItems": [
     {
-      "name": "ticker-takeover",
+      "name": "number-wheel",
       "type": "hyperframes:component",
-      "target": "compositions/components/ticker-takeover.html"
+      "target": "compositions/components/number-wheel.html"
     }
   ]
 }

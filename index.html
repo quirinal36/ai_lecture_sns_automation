@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>다이어리 이미지 만들기 실습</title><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/img-comparison-slider@8/dist/styles.css"><script defer src="https://cdn.jsdelivr.net/npm/img-comparison-slider@8/dist/index.js"></script><script defer src="compare-init.js"></script><script defer src="instagram-guide.js"></script><script defer src="setup-exercise.js"></script><script defer src="practice-01.js"></script>
+<style>@import url('https://fonts.googleapis.com/css2?family=DM+Mono&family=Nanum+Myeongjo:wght@700;800&family=Pretendard:wght@400;500;600;700;800&display=swap');:root{--ink:#292826;--muted:#77736e;--paper:#fbfaf8;--line:#e9e6e1;--lav:#eee9ff}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font:15px/1.7 Pretendard,Arial}.shell{max-width:1440px;margin:auto;display:grid;grid-template-columns:250px minmax(0,860px);gap:76px;padding:46px 48px 100px}aside{position:sticky;top:36px;height:calc(100vh - 72px)}.brand{font-weight:800;margin-bottom:36px}.brand span{display:inline-grid;place-items:center;width:25px;height:25px;border:1px solid;border-radius:7px;margin-right:8px}.label{color:#aaa59e;font:800 11px 'DM Mono';letter-spacing:.1em}.toc a{display:block;border-left:1px solid transparent;padding:7px 0 7px 15px;color:#99958f;text-decoration:none;font-size:13px}.toc a:hover,.toc a:first-of-type{color:var(--ink);border-color:var(--ink);font-weight:700}.toc .sub{padding-left:27px;font-size:12px}h1{font:800 43px/1.3 'Nanum Myeongjo';letter-spacing:-2.8px;margin:19px 0 12px}h2{font-size:24px;letter-spacing:-1px;margin:0 0 8px}.eyebrow{display:inline-flex;align-items:center;gap:7px;background:var(--lav);color:#665e93;border-radius:99px;padding:5px 11px;font-size:12px;font-weight:700}.eyebrow i{width:6px;height:6px;background:#8b7cce;border-radius:50%}.intro,.desc{color:var(--muted)}.meta{display:flex;gap:8px;flex-wrap:wrap;margin:24px 0 50px}.meta span{font-size:12px;background:#f0eeea;color:#716e69;border-radius:6px;padding:4px 10px}.callout{border:1px solid #ede7ce;background:#fffdf3;border-radius:12px;padding:18px;margin-bottom:55px;font-size:14px}.callout b{display:block}section{scroll-margin-top:36px;margin-bottom:75px}.head{display:flex;gap:10px;align-items:center;margin:45px 0 16px}.num{font:12px 'DM Mono';color:#a19a90}.head h3{font-size:17px;margin:0}.card{border:1px solid var(--line);border-radius:16px;overflow:hidden;background:white}.visuals{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line)}.image{height:390px;position:relative;background:#ddd}.image img{width:100%;height:100%;object-fit:cover;display:block}.tag{position:absolute;top:14px;left:14px;padding:4px 9px;border-radius:5px;background:#ffffffe6;font:10px 'DM Mono';letter-spacing:.06em}.after{background:#363330;color:white}.prompt{padding:16px 20px 20px}.prompt-top{display:flex;align-items:center;justify-content:space-between;gap:15px}.prompt-top b{font-size:13px}.copy{border:0;border-radius:6px;background:#f0edf4;padding:6px 10px;font:600 11px Pretendard;color:#5e5860;cursor:pointer}details{margin-top:10px;border-top:1px solid var(--line)}summary{cursor:pointer;padding-top:10px;font-size:12px;color:#766f68}pre{white-space:pre-wrap;font:12px/1.75 'DM Mono';color:#625e59;margin:12px 0 0;max-height:280px;overflow:auto}.template{background:#29282a;color:#f8f5ee;border-radius:17px;padding:28px 30px;position:relative}.template p{color:#bdb8b1;font-size:13px;margin:5px 0 20px}.template pre{padding:19px;background:#373538;border-radius:10px;color:#f4eee3;max-height:430px}.template .copy{position:absolute;right:30px;top:30px;background:#f5edcd;color:#554a29}.tips{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:14px}.tip{border:1px solid var(--line);background:white;border-radius:10px;padding:13px;font-size:12px;color:#716d67}.tip b{display:block;color:var(--ink)}footer{border-top:1px solid var(--line);padding-top:24px;color:#9b958e;font-size:12px}@media(max-width:800px){.shell{display:block;padding:25px 20px 60px}aside{position:static;height:auto;margin-bottom:34px}.toc{display:flex;gap:14px;overflow:auto}.label{display:none}.toc a,.toc .sub{padding:4px 0;border:0;white-space:nowrap}h1{font-size:34px}.visuals{grid-template-columns:1fr}.image{height:420px}.tips{grid-template-columns:1fr}}</style></head>
+<body><div class="shell"><aside><div class="brand"><span>✎</span>AI IMAGE LAB</div><nav class="toc"><div class="label">ON THIS PAGE</div><a href="#top">다이어리 이미지 만들기</a><a class="sub" href="#examples">예제 3개</a><a class="sub" href="#one">01. 블루베리 피킹</a><a class="sub" href="#two">02. 쿨링 선패치</a><a class="sub" href="#three">03. 미니 카페</a><a href="#template">표준 템플릿</a></nav></aside><main id="top"><span class="eyebrow"><i></i> 이미지 편집 실습</span><h1>다이어리 형식의<br>이미지 만들기 실습</h1><p class="intro">평범한 사진에 손글씨, 스티커, 메모를 더해 나만의 기록처럼 만드는 방법을 알아봅니다.</p><div class="meta"><span>난이도 · 초급</span><span>소요 시간 · 15분</span><span>이미지 편집</span></div><div class="callout">💡 <b>이 실습의 핵심</b>원본 사진의 분위기를 유지한 채, 다이어리에 붙인 듯한 타이포그래피와 장식 요소를 자연스럽게 추가해 보세요.</div>
+<section id="examples"><h2>예제 3개</h2><p class="desc">실제 실습에 사용한 원본, 완성 이미지, 프롬프트를 한눈에 비교해 보세요.</p>
+<div id="one" class="head"><span class="num">EXAMPLE 01</span><h3>여름날 블루베리 피킹</h3></div><article class="card"><div class="visuals"><div class="image"><span class="tag">BEFORE</span><img src="exercise01/image_01(before).png" alt="블루베리 피킹 원본"></div><div class="image"><span class="tag after">AFTER</span><img src="exercise01/image_01(after).png" alt="꾸민 블루베리 피킹"></div></div><div class="prompt"><div class="prompt-top"><b>사용한 Prompt</b><button class="copy">복사하기</button></div><details open><summary>전체 프롬프트 보기</summary><pre>원본 사진을 유지한 채, 감성적인 스크랩북/다이어리 꾸미기 스타일로 편집해줘.
+
+컨셉:
+- 밝고 사랑스럽고 감성적인 “오늘의 기록” 분위기
+- 사진 위에 손글씨 제목, 짧은 메모, 화살표, 점선 아웃라인, 하트, 별, 꽃, 체크리스트 카드 추가
+- 실제 사진 + 손그림 낙서가 자연스럽게 섞인 스타일
+- 인물과 배경은 최대한 유지하고, 장식은 사진을 더 예쁘게 보이게 하는 수준으로만 추가
+
+반드시 포함할 요소:
+- 큰 메인 타이틀: "Blueberry picking day"
+- 짧은 메모 3개: "sunny day", "fresh berries", "today's harvest"
+- 체크리스트 카드 제목: "오늘의 블루베리"
+- 체크리스트 4개: "잘 익은 열매 찾기", "조심조심 수확하기", "바구니 가득 채우기", "한 알 맛보기"
+
+디자인 규칙:
+- 제목은 상단의 깨끗한 공간에 크게
+- 핵심 피사체 주변은 흰색 점선 아웃라인
+- 주요 소품/오브젝트에는 손그림 화살표와 작은 메모 추가
+- 오른쪽 아래 또는 빈 공간에 작은 체크리스트 카드 배치
+- 작은 하트, 꽃, 별, 반짝이, 밑줄 등으로 포인트 추가
+- 색상은 흰색, 크림색, 연노랑, 연핑크, 연보라, 하늘색 계열의 파스텔 톤
+- 글씨는 귀엽고 자연스러운 손글씨 느낌
+- 전체적으로 과하지 않게, 완성도 있는 SNS 감성 편집처럼
+
+중요:
+- 원본 인물의 얼굴, 포즈, 의상, 소품은 유지
+- 원본 사진의 주제와 분위기를 해치지 말 것
+- 사진보다 장식이 더 튀지 않도록 균형 있게 구성</pre></details></div></article>
+<div id="two" class="head"><span class="num">EXAMPLE 02</span><h3>여름 쿨링 선패치</h3></div><article class="card"><div class="visuals"><div class="image"><span class="tag">BEFORE</span><img src="exercise01/image_02(before).png" alt="쿨링 선패치 원본"></div><div class="image"><span class="tag after">AFTER</span><img src="exercise01/image_02(after).png" alt="꾸민 쿨링 선패치"></div></div><div class="prompt"><div class="prompt-top"><b>사용한 Prompt</b><button class="copy">복사하기</button></div><details><summary>전체 프롬프트 보기</summary><pre>첨부한 원본 사진을 바탕으로, 원본의 인물·표정·구도·배경은 최대한 유지하면서 감성적인 스크랩북/다이어리 꾸미기 스타일로 편집해줘.
+
+전체 콘셉트는 “오늘의 기록” 같은 사랑스럽고 밝은 SNS 감성이다.
+실제 사진 위에 손글씨 메모와 스티커 낙서를 더한 느낌으로, 예쁘고 정돈된 손그림 꾸미기를 적용해줘.
+
+반드시 포함할 요소:
+- 상단의 큰 손글씨 메인 타이틀 1개
+- 짧은 감성 메모 2~4개
+- 주요 피사체나 소품을 가리키는 손그림 화살표 2~4개
+- 인물 또는 핵심 피사체 주변의 흰색 점선 아웃라인
+- 작은 하트, 반짝이, 꽃, 별, 밑줄 등 파스텔 장식 요소
+- 오른쪽 아래 또는 빈 공간에 작은 체크리스트 카드 1개
+
+텍스트:
+- 메인 타이틀: "cooling sheet"
+- 메모: "여름에도 하얀피부", "광밀착 선패치", "꾸안꾸 끝판왕"
+- 체크리스트 제목: "여름 썬패치 첵!!"
+- 체크리스트: "얼굴크기 상관없다", "바른게 티가 안난다", "온도 내려간다", "자외선 완벽차단"
+
+스타일 규칙:
+- 손글씨는 자연스럽고 귀엽게
+- 색감은 흰색, 크림색, 연노랑, 연핑크, 연보라, 하늘색 계열의 파스텔 톤
+- 핵심 피사체가 가장 먼저 보이고, 장식은 그 다음에 눈에 들어오게 구성
+- 텍스트와 장식은 사진 내용을 설명하듯 자연스럽게 배치
+- 너무 복잡하거나 과하지 않게, 깔끔하고 완성도 있게 정리
+- 실제 사진의 매력을 살린 채, 감성 다이어리처럼 예쁘게 꾸민 결과물로 만들어줘</pre></details></div></article>
+<div id="three" class="head"><span class="num">EXAMPLE 03</span><h3>tiny coffee break</h3></div><article class="card"><div class="visuals"><div class="image"><span class="tag">BEFORE</span><img src="exercise01/image_03(before).png" alt="미니 카페 원본"></div><div class="image"><span class="tag after">AFTER</span><img src="exercise01/image_03(after).png" alt="꾸민 미니 카페"></div></div><div class="prompt"><div class="prompt-top"><b>사용한 Prompt</b><button class="copy">복사하기</button></div><details><summary>전체 프롬프트 보기</summary><pre>첨부한 원본 사진을 바탕으로, 원본의 인물·표정·구도·배경은 최대한 유지하면서 감성적인 스크랩북/다이어리 꾸미기 스타일로 편집해줘.
+전체 콘셉트는 “작은 나만의 카페에서 보내는 오늘의 커피 브레이크” 같은 사랑스럽고 밝은 SNS 감성이다.
+실제 사진 위에 손글씨 메모와 스티커 낙서를 더한 느낌으로, 예쁘고 정돈된 손그림 꾸미기를 적용해줘.
+
+반드시 포함할 요소:
+- 상단의 큰 손글씨 메인 타이틀 1개
+- 짧은 감성 메모 2~4개
+- 주요 피사체나 소품을 가리키는 손그림 화살표 2~4개
+- 인물 또는 핵심 피사체 주변의 흰색 점선 아웃라인
+- 작은 하트, 반짝이, 꽃, 별, 밑줄 등 파스텔 장식 요소
+- 오른쪽 아래 또는 빈 공간에 작은 체크리스트 카드 1개
+
+텍스트:
+- 메인 타이틀: "tiny coffee break"
+- 메모: "한 모금 쉬어가기", "작지만 완벽한 카페", "코딩하다 커피타임"
+- 체크리스트 제목: "오늘의 미니카페 첵!!"
+- 체크리스트: "따뜻한 커피 준비", "좋아하는 자리에 앉기", "잠깐 여유 즐기기", "다시 즐겁게 시작!"
+
+텍스트 배치:
+- "tiny coffee break"는 사진 상단의 비교적 비어 있는 공간에 크게 배치
+- "한 모금 쉬어가기"는 인물이 들고 있는 커피잔 근처에 배치하고 손그림 화살표로 컵을 가리키기
+- "작지만 완벽한 카페"는 미니어처 공간 전체 또는 네온사인 근처에 배치
+- "코딩하다 커피타임"은 모니터나 책상 주변에 배치하고 작은 화살표로 컴퓨터를 가리키기
+- 체크리스트 카드는 오른쪽 아래나 바닥 쪽 빈 공간에 작은 메모지처럼 붙여놓기
+
+스타일 규칙:
+- 손글씨는 자연스럽고 귀엽게
+- 색감은 흰색, 크림색, 연노랑, 연핑크, 연보라, 하늘색 계열의 파스텔 톤
+- 기존 사진의 네온 핑크·청록 조명과 자연스럽게 어울리도록 파스텔 색상을 조절
+- 핵심 피사체인 커피를 마시는 인물과 미니 카페 공간이 가장 먼저 보이도록 구성
+- 인물과 미니 카페 입구 주변에는 흰색 점선 아웃라인을 가볍게 적용
+- 커피잔, 모니터, 네온사인 주변에 작은 하트, 별, 반짝이, 밑줄 장식을 추가
+- 텍스트와 장식은 사진 내용을 설명하듯 자연스럽게 배치
+- 너무 복잡하거나 과하지 않게, 여백을 충분히 남겨 깔끔하고 완성도 있게 정리
+- 실제 사진의 입체감과 미니어처 디오라마 특유의 매력을 유지
+- 전체적으로 미니어처 세계에서 보낸 하루를 다이어리에 기록한 듯한 결과물로 만들어줘.</pre></details></div></article></section>
+<section id="template"><h2>표준 템플릿 프롬프트</h2><p class="desc">대괄호 안의 내용만 바꾸면 다양한 사진에 응용할 수 있습니다.</p><div class="template"><button class="copy">전체 복사</button><p>사진의 핵심 피사체는 그대로 보존한다는 문장을 꼭 넣어 주세요.</p><pre>첨부한 원본 사진을 바탕으로, 원본의 인물·표정·구도·배경은 최대한 유지하면서 감성적인 스크랩북/다이어리 꾸미기 스타일로 편집해줘.
+
+전체 콘셉트는 “오늘의 기록” 같은 사랑스럽고 밝은 SNS 감성이다.
+실제 사진 위에 손글씨 메모와 스티커 낙서를 더한 느낌으로,
+예쁘고 정돈된 손그림 꾸미기를 적용해줘.
+
+반드시 포함할 요소:
+- 상단의 큰 손글씨 메인 타이틀 1개
+- 짧은 감성 메모 2~4개
+- 주요 피사체나 소품을 가리키는 손그림 화살표 2~4개
+- 인물 또는 핵심 피사체 주변의 흰색 점선 아웃라인
+- 작은 하트, 반짝이, 꽃, 별, 밑줄 등 파스텔 장식 요소
+- 오른쪽 아래 또는 빈 공간에 작은 체크리스트 카드 1개
+
+텍스트:
+- 메인 타이틀: "[메인 타이틀]"
+- 메모: "[메모1]", "[메모2]", "[메모3]"
+- 체크리스트 제목: "[체크리스트 제목]"
+- 체크리스트: "[체크1]", "[체크2]", "[체크3]", "[체크4]"
+
+스타일 규칙:
+- 손글씨는 자연스럽고 귀엽게
+- 색감은 흰색, 크림색, 연노랑, 연핑크, 연보라, 하늘색 계열의 파스텔 톤
+- 핵심 피사체가 가장 먼저 보이고, 장식은 그 다음에 눈에 들어오게 구성
+- 텍스트와 장식은 사진 내용을 설명하듯 자연스럽게 배치
+- 너무 복잡하거나 과하지 않게, 깔끔하고 완성도 있게 정리
+- 실제 사진의 매력을 살린 채, 감성 다이어리처럼 예쁘게 꾸민 결과물로 만들어줘</pre></div><div class="tips"><div class="tip"><b>01. 피사체 보존</b>인물·배경 변경을 막는 문장을 넣습니다.</div><div class="tip"><b>02. 위치 지정</b>텍스트가 들어갈 곳을 구체적으로 말합니다.</div><div class="tip"><b>03. 질감 선택</b>크레용, 연필, 마스킹테이프처럼 표현합니다.</div></div></section><footer>AI IMAGE LAB · Diary image practice workbook</footer></main></div><script>document.querySelectorAll('.copy').forEach(b=>b.onclick=async()=>{let p=b.closest('.prompt,.template').querySelector('pre').innerText;try{await navigator.clipboard.writeText(p);let t=b.textContent;b.textContent='복사됨 ✓';setTimeout(()=>b.textContent=t,1400)}catch(e){b.textContent='복사 실패'}})</script></body></html>

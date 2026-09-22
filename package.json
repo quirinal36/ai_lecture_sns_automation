@@ -1,0 +1,7 @@
+{
+  "name": "ai-lecture-sns-automation",
+  "private": true,
+  "scripts": {
+    "build": "node scripts/build.mjs"
+  }
+}

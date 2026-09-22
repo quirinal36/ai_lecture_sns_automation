@@ -14,7 +14,8 @@ const assets = [
   "hyperframes-practice-03.js",
   "hyperframes-practice-04.js",
   "hyperframes-shorts-showcase.js",
-  "exercise-03-making-of.js"
+  "exercise-03-making-of.js",
+  "letscoding_lounge_making_of.html"
 ];
 
 await rm(output, { recursive: true, force: true });

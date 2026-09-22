@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
     <h2>Aside Browser를 이용해<br>인스타그램에 게시를 해보세요.</h2>
     <p class="desc">완성된 이미지를 준비했다면 Aside Browser에서 Instagram을 열고, 게시물 만들기 흐름을 따라 공유해 보세요.</p>
     <div class="guide-card">
-      <img src="exercise01/aside-request.png" alt="Aside Browser에서 인스타그램 게시를 요청하는 예시">
+      <img src="https://raw.githubusercontent.com/quirinal36/ai_lecture_sns_automation/main/exercise01/aside-request.png" alt="Aside Browser에서 인스타그램 게시를 요청하는 예시">
       <div class="guide-copy">
         <p>이미지 업로드 후에는 게시글 문구와 해시태그를 확인하고, 미리보기에서 이미지가 의도한 비율로 보이는지 점검해 주세요.</p>
         <div class="guide-steps"><span>01. Instagram 열기</span><span>02. 이미지 업로드</span><span>03. 문구 작성</span><span>04. 게시 전 확인</span></div>

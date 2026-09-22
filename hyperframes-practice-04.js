@@ -30,8 +30,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     <article class="result-card">
       <div class="video-wrap square">
-        <video controls playsinline preload="metadata" poster="exercise02/pulse-app-promo-poster.jpg" aria-label="PULSE 가상 앱 홍보 영상 결과물">
-          <source src="exercise02/pulse-app-promo.mp4" type="video/mp4">
+        <video controls playsinline preload="metadata" poster="https://raw.githubusercontent.com/quirinal36/ai_lecture_sns_automation/main/exercise02/pulse-app-promo-poster.jpg" aria-label="PULSE 가상 앱 홍보 영상 결과물">
+          <source src="https://raw.githubusercontent.com/quirinal36/ai_lecture_sns_automation/main/exercise02/pulse-app-promo.mp4" type="video/mp4">
           브라우저가 MP4 영상 재생을 지원하지 않습니다.
         </video>
       </div>
@@ -48,7 +48,7 @@ document.addEventListener('DOMContentLoaded', () => {
         </div>
         <div class="palette-row"><span>컬러</span><i></i><i></i><i></i><i></i><i></i></div>
         <div class="actions">
-          <a href="exercise02/pulse-app-promo.mp4" download>결과 MP4 다운로드</a>
+          <a href="https://raw.githubusercontent.com/quirinal36/ai_lecture_sns_automation/main/exercise02/pulse-app-promo.mp4" target="_blank" rel="noopener noreferrer">결과 MP4 다운로드</a>
           <a class="secondary" href="https://www.youtube.com/shorts/JruzJjQONJI" target="_blank" rel="noopener noreferrer">참고 영상 보기</a>
         </div>
       </div>

@@ -49,7 +49,7 @@ document.addEventListener('DOMContentLoaded', () => {
           <h3>코드 한 줄이 우주로 날아가기까지</h3>
           <p>기획 메모에서 캐릭터와 기체를 만들고, AI 영상 모델로 장면을 생성한 뒤, 편집과 사운드 그리고 HyperFrames 제목 작업으로 완성한 과정을 담았습니다.</p>
         </div>
-        <a class="making-link" href="letscoding_lounge_making_of.html" target="_blank" rel="noopener noreferrer">전체 화면으로 보기 ↗</a>
+        <a class="making-link" href="https://raw.githubusercontent.com/quirinal36/ai_lecture_sns_automation/main/letscoding_lounge_making_of.html" target="_blank" rel="noopener noreferrer">원본 HTML 보기 ↗</a>
       </div>
       <div class="facts">
         <div class="fact"><b>75초</b><span>완성 애니메이션</span></div>
@@ -95,7 +95,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   const documentHost = section.querySelector('.making-document');
-  fetch('letscoding_lounge_making_of.html')
+  fetch('https://raw.githubusercontent.com/quirinal36/ai_lecture_sns_automation/main/letscoding_lounge_making_of.html')
     .then((response) => {
       if (!response.ok) throw new Error(`HTTP ${response.status}`);
       return response.text();
@@ -147,7 +147,7 @@ document.addEventListener('DOMContentLoaded', () => {
       documentHost.innerHTML = `
         <div class="making-document-status">
           제작기 화면을 불러오지 못했습니다.
-          <a href="letscoding_lounge_making_of.html" target="_blank" rel="noopener noreferrer">새 창에서 열기</a>
+          <a href="https://raw.githubusercontent.com/quirinal36/ai_lecture_sns_automation/main/letscoding_lounge_making_of.html" target="_blank" rel="noopener noreferrer">원본 HTML 열기</a>
         </div>
       `;
     });

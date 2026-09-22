@@ -9,13 +9,12 @@ const assets = [
   "instagram-guide.js",
   "practice-01.js",
   "setup-exercise.js",
-  "exercise01/aside-request.png",
-  "exercise01/image_01(before).png",
-  "exercise01/image_01(after).png",
-  "exercise01/image_02(before).png",
-  "exercise01/image_02(after).png",
-  "exercise01/image_03(before).png",
-  "exercise01/image_03(after).png"
+  "hyperframes-practice-01.js",
+  "hyperframes-practice-02.js",
+  "hyperframes-practice-03.js",
+  "hyperframes-practice-04.js",
+  "hyperframes-shorts-showcase.js",
+  "exercise-03-making-of.js"
 ];
 
 await rm(output, { recursive: true, force: true });

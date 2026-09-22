@@ -25,8 +25,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     <article class="result-card">
       <div class="video-wrap">
-        <video controls playsinline preload="metadata" poster="exercise02/blueberry-health-rolling-words-poster.jpg" aria-label="블루베리 건강 효능 롤링 타이포그래피 영상 결과물">
-          <source src="exercise02/blueberry-health-rolling-words.mp4" type="video/mp4">
+        <video controls playsinline preload="metadata" poster="https://raw.githubusercontent.com/quirinal36/ai_lecture_sns_automation/main/exercise02/blueberry-health-rolling-words-poster.jpg" aria-label="블루베리 건강 효능 롤링 타이포그래피 영상 결과물">
+          <source src="https://raw.githubusercontent.com/quirinal36/ai_lecture_sns_automation/main/exercise02/blueberry-health-rolling-words.mp4" type="video/mp4">
           브라우저가 MP4 영상 재생을 지원하지 않습니다.
         </video>
       </div>
@@ -42,8 +42,8 @@ document.addEventListener('DOMContentLoaded', () => {
           <div><b>지난 문구</b><span>작고 투명하게</span></div>
         </div>
         <div class="actions">
-          <a href="exercise02/blueberry-health-rolling-words.mp4" download>결과 MP4 다운로드</a>
-          <a class="secondary" href="exercise01/image_01(before).png" target="_blank">원본 사진 열기</a>
+          <a href="https://raw.githubusercontent.com/quirinal36/ai_lecture_sns_automation/main/exercise02/blueberry-health-rolling-words.mp4" target="_blank" rel="noopener noreferrer">결과 MP4 다운로드</a>
+          <a class="secondary" href="https://raw.githubusercontent.com/quirinal36/ai_lecture_sns_automation/main/exercise01/image_01%28before%29.png" target="_blank" rel="noopener noreferrer">원본 사진 열기</a>
         </div>
       </div>
     </article>

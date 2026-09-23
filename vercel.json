@@ -3,6 +3,5 @@
   "buildCommand": "npm run build",
   "outputDirectory": "dist",
   "framework": null,
-  "installCommand": "npm install --no-audit --no-fund",
-  "cleanUrls": true
+  "installCommand": "npm install --no-audit --no-fund"
 }
